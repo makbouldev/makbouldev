@@ -1,27 +1,27 @@
 export const services = [
   {
     index: '01',
-    tag: 'Frontend build',
-    title: 'Interfaces React sur mesure',
+    tag: 'Reservation',
+    title: 'Creation de systemes de reservation',
     description:
-      'Des interfaces rapides, structurees et visuellement propres pour transformer une idee en produit presentable.',
-    note: 'Composants clairs, responsive layout et hierarchie solide.',
+      'Mise en place de plateformes simples et claires pour gerer les reservations, les disponibilites et les demandes client.',
+    note: 'Ideal pour rendez-vous, bookings, services et organisations.',
   },
   {
     index: '02',
-    tag: 'Brand + code',
-    title: 'Landing pages developer style',
+    tag: 'Site vitrine',
+    title: 'Creation de sites vitrines professionnels',
     description:
-      'Des pages de lancement avec hero puissante, sections propres et CTA visibles sans look generique.',
-    note: 'Pense pour portfolio, saas, agences et pages produit.',
+      'Des sites modernes pour presenter votre activite, vos services et vos points forts avec une image serieuse et rassurante.',
+    note: 'Parfait pour independants, commerces, cabinets et petites entreprises.',
   },
   {
     index: '03',
-    tag: 'Personal branding',
-    title: 'Portfolios de developpeur',
+    tag: 'Presentation',
+    title: 'Sites de presentation pour entreprises',
     description:
-      'Un site qui expose votre stack, vos projets et votre niveau avec une presentation plus technique et plus premium.',
-    note: 'Ideal pour freelance, dev frontend et fullstack.',
+      'Des pages structurees pour introduire votre societe, vos valeurs, vos prestations et donner confiance a vos futurs clients.',
+    note: 'Pense pour renforcer votre presence en ligne et votre credibilite.',
   },
   {
     index: '04',

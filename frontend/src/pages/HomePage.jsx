@@ -1,7 +1,19 @@
 import { useState } from 'react'
-import { Container, Row, Col, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {
+  BarChartLine,
+  CalendarCheck,
+  Gem,
+  LayoutWtf,
+  LightningCharge,
+  People,
+} from 'react-bootstrap-icons'
 import { examples, services, stats } from '../data/content'
+import programmingHero from '../assets/HERO.png'
+import professionalPhoto from '../assets/photo-professional.png'
+
+const serviceIcons = [LayoutWtf, CalendarCheck, BarChartLine]
 
 function HomePage() {
   const [content] = useState({
@@ -12,111 +24,171 @@ function HomePage() {
 
   return (
     <>
-      <section className="hero-section">
-        <Container>
-          <Row className="align-items-center g-5">
-            <Col lg={7}>
-              <div className="eyebrow">Frontend developer portfolio</div>
-              <h1 className="hero-title">
-                Je transforme des interfaces classiques en experiences web plus creatives.
-              </h1>
-              <p className="hero-text">
-                Design, composants et structure sont penses pour donner un vrai rendu de developer:
-                plus de contraste, plus de rythme et une identite visuelle qui marque.
-              </p>
-              <div className="hero-tag-row">
-                <span>React JS</span>
-                <span>UI Design</span>
-                <span>Responsive</span>
-              </div>
-              <div className="hero-actions">
-                <Button as={Link} to="/exemples" className="hero-primary">
-                  Decouvrir mes projects
-                </Button>
-                <Button as={Link} to="/contact" variant="link" className="hero-secondary">
-                  Lancer un projet
-                </Button>
-              </div>
-              <div className="hero-mini-note">
-                React Bootstrap + CSS custom, sans templates fades.
-              </div>
-            </Col>
-            <Col lg={5}>
-              <div className="hero-card hero-dev-card">
-                <div className="hero-terminal-bar">
-                  <span />
-                  <span />
-                  <span />
+      <div className="home-flow-surface">
+        <section className="hero-section">
+          <Container>
+            <Row className="align-items-center hero-row g-5">
+              <Col lg={6}>
+                <div className="eyebrow">Web developer</div>
+                <h1 className="hero-title">
+                  Creation de
+                  <span> sites web </span>
+                  professionnels qui developpent votre business.
+                </h1>
+                <p className="hero-text">
+                  Transformez votre projet en un site web elegant, performant et optimise pour offrir
+                  la meilleure experience a vos clients.
+                </p>
+                <div className="hero-line" />
+                <div className="hero-actions">
+                  <Button as={Link} to="/exemples" className="hero-primary">
+                    Decouvrir mes projets
+                  </Button>
+                  <Button as={Link} to="/contact" variant="link" className="hero-secondary">
+                    Demarrer maintenant
+                  </Button>
                 </div>
-                <div className="hero-photo-frame">
-                  <div className="photo-placeholder">
-                    <span>Photo zone</span>
-                    <strong>Ajoutez votre portrait ici</strong>
-                    <small>Place ideale pour une photo developer, fond propre ou setup bureau.</small>
+                <div className="hero-mini-note">
+                  Developpement d&apos;un systeme de reservation en ligne, creation de sites web
+                  vitrines, accompagnement digital
+                </div>
+              </Col>
+              <Col lg={6}>
+                <div className="hero-visual-wrap">
+                  <img
+                    src={programmingHero}
+                    alt="Illustration programmation creative"
+                    className="hero-illustration"
+                  />
+                  <div className="hero-bubble hero-bubble-one">
+                    <strong>Qualite</strong>
+                    <span>Un rendu propre et professionnel</span>
+                  </div>
+                  <div className="hero-bubble hero-bubble-two">
+                    <strong>Creativite</strong>
+                    <span>Une identite visuelle qui fait la difference</span>
                   </div>
                 </div>
-                <div className="hero-side-card">
-                  <p className="hero-card-label">Stack snapshot</p>
-                  <div className="hero-badge">Creative UI with developer energy</div>
-                  <div className="hero-preview compact-preview">
-                    {content.stats.map((stat) => (
-                      <div className="mini-metric" key={stat.label}>
-                        <strong>{stat.value}</strong>
-                        <span>{stat.label}</span>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section className="section-space services-showcase">
+          <Container>
+            <div className="services-simple-shell">
+              <div className="services-simple-head">
+                <div className="services-simple-copy">
+                  <span>Services</span>
+                  <h2>Des services simples, modernes et utiles pour faire avancer votre projet.</h2>
+                  <p>
+                    Une presentation claire, une meilleure experience et un rendu plus professionnel
+                    pour votre activite.
+                  </p>
+                  <div className="services-head-actions">
+                    <Button as={Link} to="/services" className="section-link-btn services-btn-desktop">
+                      Voir la page services
+                    </Button>
+                    <Button as={Link} to="/exemples" className="section-link-btn services-projects-btn">
+                      Voir mes projects
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="services-profile-card">
+                  <div className="services-profile-photo">
+                    <img
+                      src={professionalPhoto}
+                      alt="Portrait professionnel de Noureddine Makboul"
+                      className="services-profile-avatar"
+                    />
+                  </div>
+                  <strong>Noureddine Makboul</strong>
+                  <span>Developpeur web</span>
+                  <small>Auto Entrepreneur</small>
+                </div>
+              </div>
+
+              <div className="services-simple-grid">
+                {content.services.slice(0, 3).map((service, index) => {
+                  const Icon = serviceIcons[index] ?? LayoutWtf
+
+                  return (
+                    <article className="service-simple-card" key={service.title}>
+                      <div className="service-simple-top">
+                        <div className="service-icon-wrap">
+                          <Icon />
+                        </div>
+                        <span className="service-chip">{service.tag}</span>
                       </div>
-                    ))}
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </article>
+                  )
+                })}
+              </div>
+
+              <div className="services-trust-row">
+                <article className="services-trust-item">
+                  <div className="services-trust-icon">
+                    <People />
                   </div>
+                  <strong>Equipe fiable</strong>
+                  <span>Un accompagnement serieux et une communication claire.</span>
+                </article>
+                <article className="services-trust-item">
+                  <div className="services-trust-icon">
+                    <LightningCharge />
+                  </div>
+                  <strong>Execution rapide</strong>
+                  <span>Un travail fluide pour lancer votre projet sans perdre de temps.</span>
+                </article>
+                <article className="services-trust-item">
+                  <div className="services-trust-icon">
+                    <Gem />
+                  </div>
+                  <strong>Prix raisonnables</strong>
+                  <span>Un rendu propre et professionnel avec un budget maitrise.</span>
+                </article>
+              </div>
+
+              <div className="services-mobile-action">
+                <div className="services-mobile-buttons">
+                  <Button as={Link} to="/services" className="section-link-btn services-btn-mobile">
+                    Voir la page services
+                  </Button>
+                  <Button as={Link} to="/exemples" className="section-link-btn services-btn-mobile">
+                    Voir mes projects
+                  </Button>
                 </div>
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+            </div>
+          </Container>
+        </section>
 
-      <section className="section-space">
-        <Container>
-          <div className="section-heading">
-            <span>Services</span>
-            <h2>Des blocs visuels qui ressemblent a un vrai produit, pas a un template.</h2>
-          </div>
-          <Row className="g-4">
-            {content.services.slice(0, 3).map((service) => (
-              <Col md={6} lg={4} key={service.title}>
-                <Card className="glass-card h-100">
-                  <Card.Body>
-                    <p className="card-index">{service.index}</p>
-                    <Card.Title>{service.title}</Card.Title>
-                    <Card.Text>{service.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-
-      <section className="section-space examples-band">
-        <Container>
-          <div className="section-heading">
-            <span>Projets</span>
-            <h2>Quelques directions pour donner une identite plus technique et plus forte.</h2>
-          </div>
-          <Row className="g-4">
-            {content.examples.slice(0, 2).map((example) => (
-              <Col lg={6} key={example.name}>
-                <div className="example-panel">
-                  <div className="example-visual" style={{ background: example.gradient }} />
-                  <div className="example-copy">
-                    <p>{example.category}</p>
-                    <h3>{example.name}</h3>
-                    <span>{example.summary}</span>
+        <section className="section-space examples-band">
+          <Container>
+            <div className="section-heading">
+              <span>Projets</span>
+              <h2>Quelques directions pour donner une identite plus technique et plus forte.</h2>
+            </div>
+            <Row className="g-4">
+              {content.examples.slice(0, 2).map((example) => (
+                <Col lg={6} key={example.name}>
+                  <div className="example-panel">
+                    <div className="example-visual" style={{ background: example.gradient }} />
+                    <div className="example-copy">
+                      <p>{example.category}</p>
+                      <h3>{example.name}</h3>
+                      <span>{example.summary}</span>
+                    </div>
                   </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </section>
+      </div>
     </>
   )
 }
