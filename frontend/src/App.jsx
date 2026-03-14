@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { TelephoneFill, Whatsapp } from 'react-bootstrap-icons'
 import SiteNavbar from './components/SiteNavbar'
 import SiteFooter from './components/SiteFooter'
 import HomePage from './pages/HomePage'
@@ -20,6 +21,12 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
+      <a href="#hero" className="floating-whatsapp" aria-label="WhatsApp">
+        <Whatsapp />
+      </a>
+      <a href="tel:+212522491616" className="floating-call" aria-label="Appel">
+        <TelephoneFill />
+      </a>
       <SiteFooter />
     </div>
   )

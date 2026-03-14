@@ -168,24 +168,36 @@ function HomePage() {
 
         <section className="section-space examples-band">
           <Container>
-            <div className="section-heading">
-              <span>Projets</span>
-              <h2>Quelques directions pour donner une identite plus technique et plus forte.</h2>
-            </div>
-            <Row className="g-4">
-              {content.examples.slice(0, 2).map((example) => (
-                <Col lg={6} key={example.name}>
-                  <div className="example-panel">
-                    <div className="example-visual" style={{ background: example.gradient }} />
-                    <div className="example-copy">
-                      <p>{example.category}</p>
-                      <h3>{example.name}</h3>
-                      <span>{example.summary}</span>
+            <div className="projects-showcase">
+              <div className="projects-showcase-head">
+                <div className="projects-showcase-copy">
+                  <span>Projects</span>
+                  <h2>Des projets penses pour convaincre, presenter et faciliter l action.</h2>
+                  <p>
+                    Voici quelques formats de projets que nous pouvons creer pour mettre en valeur
+                    votre activite et rendre votre presence en ligne plus forte.
+                  </p>
+                </div>
+                <Button as={Link} to="/exemples" className="section-link-btn projects-link-btn">
+                  Voir tous les projects
+                </Button>
+              </div>
+
+              <div className="projects-grid">
+                {content.examples.slice(0, 4).map((example, index) => (
+                  <article className={`project-card project-card-${index + 1}`} key={example.name}>
+                    <div className="project-card-visual" style={{ background: example.gradient }}>
+                      <span>{example.category}</span>
                     </div>
-                  </div>
-                </Col>
-              ))}
-            </Row>
+                    <div className="project-card-copy">
+                      <h3>{example.name}</h3>
+                      <p>{example.summary}</p>
+                      <small>{example.stack}</small>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
           </Container>
         </section>
       </div>

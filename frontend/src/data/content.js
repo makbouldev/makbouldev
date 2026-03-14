@@ -35,25 +35,32 @@ export const services = [
 
 export const examples = [
   {
-    name: 'DevLaunch',
-    category: 'SaaS Landing',
-    summary: 'Landing page dark-tech avec hero code, pricing propre et CTA forte.',
-    stack: 'React Bootstrap, CSS custom',
-    gradient: 'linear-gradient(135deg, #00c2ff 0%, #005bea 100%)',
+    name: 'BookingFlow',
+    category: 'Systeme de reservation',
+    summary: 'Plateforme claire pour gerer reservations, disponibilites et demandes client.',
+    stack: 'React, dashboard, formulaire',
+    gradient: 'linear-gradient(135deg, #00c2ff 0%, #2563eb 100%)',
   },
   {
-    name: 'CodeSmith',
-    category: 'Developer Portfolio',
-    summary: 'Portfolio personnel avec sections stack, projects gallery et contact premium.',
-    stack: 'React Router, component UI',
+    name: 'Studio Vitrine',
+    category: 'Site vitrine',
+    summary: 'Presentation moderne des services, points forts et contact rapide.',
+    stack: 'React Bootstrap, responsive UI',
     gradient: 'linear-gradient(135deg, #7f5cff 0%, #19d3ff 100%)',
   },
   {
-    name: 'Terminal One',
-    category: 'Studio Website',
-    summary: 'Univers visuel type terminal futuriste avec cards translucides et background grid.',
-    stack: 'Frontend only',
-    gradient: 'linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%)',
+    name: 'Entreprise Pro',
+    category: 'Presentation entreprise',
+    summary: 'Site professionnel pour introduire la societe, ses valeurs et ses prestations.',
+    stack: 'Pages corporate, CTA, sections',
+    gradient: 'linear-gradient(135deg, #f59e0b 0%, #fb7185 100%)',
+  },
+  {
+    name: 'Portfolio Signature',
+    category: 'Portfolio personnel',
+    summary: 'Site personnel premium pour mettre en avant projets, profil et expertise.',
+    stack: 'Branding, projets, contact',
+    gradient: 'linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%)',
   },
 ]
 

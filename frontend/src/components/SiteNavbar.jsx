@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, Button } from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom'
-import { Facebook, Instagram, Linkedin, Whatsapp } from 'react-bootstrap-icons'
+import { Facebook, Instagram, Linkedin } from 'react-bootstrap-icons'
 import logo from '../assets/logo.png'
 
 function SiteNavbar() {
@@ -16,17 +16,14 @@ function SiteNavbar() {
           </div>
 
           <div className="navbar-socials">
-            <a href="#hero" aria-label="Facebook">
+            <a href="#hero" aria-label="Facebook" className="social-facebook">
               <Facebook />
             </a>
-            <a href="#hero" aria-label="Instagram">
+            <a href="#hero" aria-label="Instagram" className="social-instagram">
               <Instagram />
             </a>
-            <a href="#hero" aria-label="LinkedIn">
+            <a href="#hero" aria-label="LinkedIn" className="social-linkedin">
               <Linkedin />
-            </a>
-            <a href="#hero" aria-label="WhatsApp">
-              <Whatsapp />
             </a>
           </div>
         </Container>
