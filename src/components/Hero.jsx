@@ -265,9 +265,9 @@ const Hero = () => {
                 <Link to="/contact" className="btn-hero-solid d-flex align-items-center gap-2">
                   <i className="bi bi-file-earmark-text"></i> DEMANDER UN DEVIS
                 </Link>
-                <Link to="/services" className="btn-hero-outline d-flex align-items-center gap-2">
-                  <i className="bi bi-search"></i> TOUS NOS SERVICES
-                </Link>
+                <a href="tel:+212783180806" className="btn-hero-outline d-flex align-items-center gap-2">
+                  <i className="bi bi-telephone-fill"></i> APPELER LE +212 7 83 18 08 06
+                </a>
               </div>
             </div>
           </div>
