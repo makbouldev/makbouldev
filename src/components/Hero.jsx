@@ -261,18 +261,13 @@ const Hero = () => {
                 Nous concevons des sites vitrines et e-commerce ultra-rapides, et nous propulsons votre croissance avec des services digitaux complets : référencement SEO, Google Ads, Meta et applications mobiles.
               </p>
 
-              <div className="hero-agency-buttons d-flex flex-wrap align-items-center gap-3">
-                <Link to="/contact" className="btn-hero-marketing-primary d-inline-flex align-items-center gap-2">
-                  <i className="bi bi-lightning-charge-fill text-warning fs-5"></i>
-                  <span>Demander Mon Devis Gratuit</span>
-                  <i className="bi bi-arrow-right btn-arrow-icon ms-1"></i>
+              <div className="hero-agency-buttons d-flex flex-wrap gap-3">
+                <Link to="/contact" className="btn-hero-solid d-flex align-items-center gap-2">
+                  <i className="bi bi-file-earmark-text"></i> DEMANDER UN DEVIS
                 </Link>
-
-                <a href="tel:+212783180806" className="btn-hero-marketing-call d-inline-flex align-items-center gap-2">
-                  <span className="live-online-dot me-1" title="Disponible 7j/7"></span>
-                  <i className="bi bi-telephone-fill btn-phone-icon"></i>
-                  <span>Appeler : <strong>+212 7 83 18 08 06</strong></span>
-                </a>
+                <Link to="/services" className="btn-hero-outline d-flex align-items-center gap-2">
+                  <i className="bi bi-search"></i> TOUS NOS SERVICES
+                </Link>
               </div>
             </div>
           </div>
