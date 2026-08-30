@@ -39,7 +39,7 @@ const ChatWidget = () => {
         {/* Footer with WhatsApp button */}
         <div className="chat-popup-footer">
           <a 
-            href="https://wa.me/212725572550?text=Salam%20Noureddine,%20I%20have%20a%20project%20in%20mind!" 
+            href="https://wa.me/212783180806?text=Salam%20Noureddine,%20I%20have%20a%20project%20in%20mind!" 
             target="_blank" 
             rel="noopener noreferrer"
             className="chat-whatsapp-btn"

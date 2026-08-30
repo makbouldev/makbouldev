@@ -71,7 +71,7 @@ const AppContent = () => {
 
       {/* Floating WhatsApp Widget */}
       <a 
-        href="https://wa.me/212725572550" 
+        href="https://wa.me/212783180806" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="whatsapp-float-btn shadow-lg"

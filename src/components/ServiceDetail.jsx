@@ -261,7 +261,7 @@ const ServiceDetail = () => {
             
             <div className="d-flex flex-wrap gap-3">
               <a 
-                href={`https://wa.me/212725572550?text=Salam%20Noureddine,%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20${encodeURIComponent(service.title)}%20!`} 
+                href={`https://wa.me/212783180806?text=Salam%20Noureddine,%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20${encodeURIComponent(service.title)}%20!`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-whatsapp d-inline-flex align-items-center gap-2"
@@ -322,7 +322,7 @@ const ServiceDetail = () => {
                   </p>
                   <div className="mt-4">
                     <a 
-                      href="https://wa.me/212725572550?text=Salam%20Noureddine,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20service%20SEO%20!" 
+                      href="https://wa.me/212783180806?text=Salam%20Noureddine,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20service%20SEO%20!" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn-whatsapp d-inline-flex align-items-center gap-2"
@@ -400,7 +400,7 @@ const ServiceDetail = () => {
                         <h4 className="h6 text-light mb-2 fw-bold">-20% sur la création de votre site vitrine !</h4>
                         <p className="text-muted small mb-3" style={{ fontSize: '0.7rem', lineHeight: '1.4' }}>Profitez d'une réduction exclusive cette semaine pour lancer votre présence en ligne au Maroc avec un design sur-mesure premium...</p>
                         <div className="d-flex gap-2">
-                          <a href="tel:+212725572550" className="btn btn-sm btn-primary py-1 px-3" style={{ fontSize: '0.7rem' }}>Appeler</a>
+                          <a href="tel:+212783180806" className="btn btn-sm btn-primary py-1 px-3" style={{ fontSize: '0.7rem' }}>Appeler</a>
                           <span className="btn btn-sm btn-outline-secondary py-1 px-3" style={{ fontSize: '0.7rem', color: '#fff', borderColor: 'rgba(255,255,255,0.1)' }}>En savoir plus</span>
                         </div>
                       </div>
@@ -420,7 +420,7 @@ const ServiceDetail = () => {
                   </p>
                   <div className="mt-4">
                     <a 
-                      href="https://wa.me/212725572550?text=Salam%20Noureddine,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20service%20de%20Posts%20Google%20Maps%20!" 
+                      href="https://wa.me/212783180806?text=Salam%20Noureddine,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20service%20de%20Posts%20Google%20Maps%20!" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn-whatsapp d-inline-flex align-items-center gap-2"
@@ -513,7 +513,7 @@ const ServiceDetail = () => {
                   </div>
                   <div className="mt-4">
                     <a 
-                      href="https://wa.me/212725572550?text=Salam%20Noureddine,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20service%20de%20Posts%20Google%20Maps%20!" 
+                      href="https://wa.me/212783180806?text=Salam%20Noureddine,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20service%20de%20Posts%20Google%20Maps%20!" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn-whatsapp d-inline-flex align-items-center gap-2"
@@ -639,7 +639,7 @@ const ServiceDetail = () => {
                   {/* Action buttons */}
                   <div className="d-flex flex-wrap gap-3">
                     <a 
-                      href={`https://wa.me/212725572550?text=Salam%20Noureddine,%20je%20souhaite%20lancer%20un%20nouveau%20projet%20avec%20votre%20équipe%20!`} 
+                      href={`https://wa.me/212783180806?text=Salam%20Noureddine,%20je%20souhaite%20lancer%20un%20nouveau%20projet%20avec%20votre%20équipe%20!`} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn-whatsapp d-inline-flex align-items-center gap-2"
@@ -749,7 +749,7 @@ const ServiceDetail = () => {
               </p>
               <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                 <a 
-                  href="https://wa.me/212725572550?text=Salam%20Noureddine,%20je%20souhaite%20discuter%20d'un%20projet%20!" 
+                  href="https://wa.me/212783180806?text=Salam%20Noureddine,%20je%20souhaite%20discuter%20d'un%20projet%20!" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-whatsapp d-inline-flex align-items-center gap-2"

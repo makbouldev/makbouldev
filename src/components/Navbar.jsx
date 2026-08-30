@@ -75,7 +75,7 @@ const Navbar = () => {
               </div>
               <div className="info-text">
                 <span className="info-label">Make a call</span>
-                <a href="tel:+212725572550" className="info-value">+212 7 25 57 25 50</a>
+                <a href="tel:+212783180806" className="info-value">+212 7 83 18 08 06</a>
               </div>
             </div>
 
@@ -179,7 +179,7 @@ const Navbar = () => {
               </div>
               <div className="drawer-contact-item d-flex align-items-center gap-2 mb-3">
                 <i className="bi bi-telephone-fill text-primary-agency"></i>
-                <a href="tel:+212725572550">+212 7 25 57 25 50</a>
+                <a href="tel:+212783180806">+212 7 83 18 08 06</a>
               </div>
               <Link to="/contact" className="btn-agency-cta w-100 text-center py-2" onClick={closeMenu}>
                 <i className="bi bi-file-earmark-text"></i> GET A QUOTE
