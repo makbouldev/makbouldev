@@ -102,7 +102,7 @@ const pricingList = [
   {
     title: "Création de site web",
     prefix: "À partir de",
-    price: "900 DH",
+    price: "1 500 DH",
     period: "Projet",
     badge: "Populaire",
     desc: "Sites vitrines, e-commerce & solutions sur-mesure de haute qualité.",
@@ -114,7 +114,7 @@ const pricingList = [
   {
     title: "Référencement Naturel (SEO)",
     prefix: "À partir de",
-    price: "200 DH",
+    price: "400 DH",
     period: "Page",
     desc: "Boostez votre classement sur Google pour attirer des clients en continu.",
     features: ["Audit technique initial", "Optimisation On-page & Contenu", "Recherche de mots-clés stratégiques", "Rapport de performance mensuel"],
@@ -125,7 +125,7 @@ const pricingList = [
   {
     title: "Google Adwords",
     prefix: "À partir de",
-    price: "600 DH",
+    price: "700 DH",
     period: "Campagne",
     desc: "Campagnes publicitaires ciblées pour un retour sur investissement immédiat.",
     features: ["Configuration complète de compte", "Recherche de mots-clés payants", "Optimisation quotidienne du budget", "Rapports de conversion"],
@@ -158,7 +158,7 @@ const pricingList = [
   {
     title: "Applications Mobiles",
     prefix: "À partir de",
-    price: "1 500 DH",
+    price: "3 000 DH",
     period: "Projet",
     desc: "Applications natives iOS & Android ergonomiques et performantes.",
     features: ["Développement Flutter (iOS & Android)", "Interface utilisateur moderne (UI/UX)", "Intégration d'API & Base de données", "Publication sur App Store & Play Store"],
