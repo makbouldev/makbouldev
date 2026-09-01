@@ -269,7 +269,7 @@ const Hero = () => {
                   <i className="bi bi-telephone-fill"></i> APPELER LE +212 7 83 18 08 06
                 </a>
                 <a href="tel:+212725572550" className="btn-hero-outline d-flex align-items-center gap-2">
-                  <i className="bi bi-telephone-fill"></i> +212 7 25 57 25 50
+                  <i className="bi bi-telephone-fill"></i> APPELER LE +212 7 25 57 25 50
                 </a>
               </div>
             </div>
