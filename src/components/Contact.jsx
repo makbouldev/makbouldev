@@ -116,10 +116,15 @@ const Contact = () => {
               <div className="d-flex align-items-center gap-3 mb-4">
                 <div className="fs-4 text-primary"><i className="bi bi-whatsapp"></i></div>
                 <div>
-                  <div className="text-muted small">WhatsApp/Phone</div>
-                  <a href="https://wa.me/212783180806" target="_blank" rel="noreferrer" className="text-light text-decoration-none fw-semibold">
-                    +212 7 83 18 08 06
-                  </a>
+                  <div className="text-muted small">WhatsApp / Phone</div>
+                  <div className="d-flex flex-column gap-1">
+                    <a href="https://wa.me/212783180806" target="_blank" rel="noreferrer" className="text-light text-decoration-none fw-semibold">
+                      +212 7 83 18 08 06
+                    </a>
+                    <a href="https://wa.me/212725572550" target="_blank" rel="noreferrer" className="text-light text-decoration-none fw-semibold">
+                      +212 7 25 57 25 50
+                    </a>
+                  </div>
                 </div>
               </div>
 
