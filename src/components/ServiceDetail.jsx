@@ -163,15 +163,15 @@ const ServiceDetail = () => {
       url: "https://cmpf-ambulance.vercel.app/"
     },
     {
-      id: "vogal-jewellery",
-      title: "Vogal Jewellery",
+      id: "koffee-kuento",
+      title: "Koffee Kuento",
       category: "site-web",
-      desc: "Boutique e-commerce Shopify de luxe spécialisée dans la joaillerie et les bijoux de création.",
-      longDesc: "Vogal Jewellery est un modèle de boutique e-commerce Shopify raffiné conçu pour l'industrie de la joaillerie de luxe. Il met en avant les collections de bijoux avec des visuels grand format ('Timeless Style'), un zoom interactif haute fidélité sur les pièces, un processus d'achat simplifié et des intégrations de partage social.",
-      techs: ["Shopify", "Liquid", "Javascript", "CSS3", "Responsive Design"],
-      results: ["Présentation visuelle élégante valorisant les bijoux de luxe", "Tunnel d'achat fluide avec options de personnalisation de gravure", "Temps de chargement rapide de moins de 1.2 seconde"],
-      image: `${import.meta.env.BASE_URL}vogal_jewellery_showcase.png`,
-      url: "https://vogal-demos.myshopify.com/"
+      desc: "Site web & menu interactif pour café-restaurant premium avec commande en ligne et intégration Glovo.",
+      longDesc: "Koffee Kuento est un café-restaurant gastronomique situé à Palmiers, Casablanca. Nous avons conçu et développé leur site web officiel avec présentation du menu, réservation et intégration directe pour commander sur Glovo.",
+      techs: ["React.js", "Tailwind CSS", "Vercel", "Glovo Integration", "Responsive Design"],
+      results: ["Design gastronomique chaleureux et haut de gamme", "Présentation claire du menu et des spécialités maison", "Commandes directes et intégration des livraisons Glovo"],
+      image: `${import.meta.env.BASE_URL}koffee_kuento_showcase.png`,
+      url: "https://koffee-kuento-seven.vercel.app/"
     },
     {
       id: "tripway-travel",
