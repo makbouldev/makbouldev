@@ -185,6 +185,17 @@ const ServiceDetail = () => {
       url: "https://photographystudio-snowy.vercel.app/"
     },
     {
+      id: "m2-maroc",
+      title: "M2 Maroc Immobilier",
+      category: "site-web",
+      desc: "Portail immobilier de luxe pour villas, riads et propriétés de prestige à Marrakech et au Maroc.",
+      longDesc: "M2 Maroc est une agence immobilière de prestige spécialisée dans la vente et la location de villas haut de gamme, riads traditionnels et appartements de luxe à Marrakech et à travers le Maroc. Nous avons développé leur plateforme web avec moteur de recherche de biens, filtrage avancé et contact direct avec les agents.",
+      techs: ["React.js", "Tailwind CSS", "Vercel", "Immobilier API", "WhatsApp API"],
+      results: ["Plateforme immobilière fluide et visuellement haut de gamme", "Moteur de recherche par critères et typologies de biens", "Formulaires de contact et d'estimation immobilière directs"],
+      image: `${import.meta.env.BASE_URL}m2_maroc_showcase.png`,
+      url: "https://m2maroc.vercel.app/"
+    },
+    {
       id: "tripway-travel",
       title: "TRIPWAY",
       category: "site-web",
