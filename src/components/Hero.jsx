@@ -426,15 +426,8 @@ const Hero = () => {
           <div className="logo-slider-container">
             <div className="logo-slider-track">
               {[...partnersList, ...partnersList, ...partnersList, ...partnersList].map((partner, index) => (
-                <div key={index} className="partner-logo-item d-flex align-items-center gap-2">
-                  <div className="partner-logo-icon">
-                    {partner.img ? (
-                      <img src={partner.img} alt={partner.name} className="partner-logo-img-tag" />
-                    ) : (
-                      <i className={`bi ${partner.icon}`}></i>
-                    )}
-                  </div>
-                  <span className="partner-logo-name">{partner.name}</span>
+                <div key={index} className="partner-logo-item d-flex align-items-center justify-content-center">
+                  <img src={partner.img} alt={partner.name} className="partner-logo-img-tag" />
                 </div>
               ))}
             </div>

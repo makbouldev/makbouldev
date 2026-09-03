@@ -2217,10 +2217,17 @@ main {
 }
 
 .partner-logo-img-tag {
-  height: 32px;
+  height: 48px;
+  max-width: 160px;
   width: auto;
   object-fit: contain;
-  border-radius: 4px;
+  filter: brightness(0.95) contrast(1.05);
+  transition: all 0.3s ease;
+}
+
+.partner-logo-item:hover .partner-logo-img-tag {
+  filter: brightness(1.1) contrast(1.1);
+  transform: scale(1.08);
 }
 
 .partner-logo-name {
