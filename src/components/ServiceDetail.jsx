@@ -196,6 +196,28 @@ const ServiceDetail = () => {
       url: "https://m2maroc.vercel.app/"
     },
     {
+      id: "dentica-clinic",
+      title: "Dentica Dental Clinic",
+      category: "site-web",
+      desc: "Site web médical moderne pour cabinet dentaire, prise de rendez-vous en ligne et présentation des soins.",
+      longDesc: "Dentica est une clinique dentaire spécialisée dans la médecine dentaire de précision, l'implantologie et l'esthétique du sourire. Nous avons conçu et développé leur plateforme web médicale avec réservation de consultation en ligne, présentation des spécialistes et intégration des avis patients.",
+      techs: ["React.js", "Tailwind CSS", "Vercel", "Prise de RDV", "Medical UI/UX"],
+      results: ["Système de réservation de consultations médicales en ligne", "Interface épurée et rassurante pour la patientèle", "Optimisation du taux de conversion des demandes de bilan dentaire"],
+      image: `${import.meta.env.BASE_URL}dentica_clinic_showcase.png`,
+      url: "https://dentist-project-three.vercel.app/"
+    },
+    {
+      id: "floussy-fintech",
+      title: "Floussy FinTech App",
+      category: "site-web",
+      desc: "Application web SaaS de gestion financière personnelle, suivi des budgets, transactions et patrimoine en MAD.",
+      longDesc: "Floussy est une application web SaaS moderne conçue pour le suivi des finances personnelles et la gestion du patrimoine en Dirham Marocain (MAD). Elle permet la gestion multi-comptes, le suivi du cash-flow en temps réel, l'analyse des dépenses récurrentes et la définition d'objectifs d'épargne.",
+      techs: ["React.js", "Tailwind CSS", "Vercel", "SaaS Dashboard", "Chart.js / Analytics"],
+      results: ["Dashboard SaaS interactif avec mise à jour des flux financiers en temps réel", "Gestion multi-devises axée sur le Dirham Marocain (MAD)", "Exports de rapports et graphiques d'analyse budgétaire avancés"],
+      image: `${import.meta.env.BASE_URL}floussy_fintech_showcase.png`,
+      url: "https://floussy-five.vercel.app/"
+    },
+    {
       id: "tripway-travel",
       title: "TRIPWAY",
       category: "site-web",
