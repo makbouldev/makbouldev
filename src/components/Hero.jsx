@@ -49,14 +49,10 @@ const CounterValue = ({ target, duration = 1500, suffix = "" }) => {
 };
 
 const partnersList = [
-  { name: "Synapse Tech", icon: "bi-cpu", color: "#38bdf8" },
-  { name: "LogiMaroc", icon: "bi-globe-europe-africa", color: "#34d399" },
-  { name: "Chic Artisanat", icon: "bi-brush", color: "#fb7185" },
-  { name: "ImmoInvest", icon: "bi-building-fill", color: "#fbbf24" },
-  { name: "Souss Agri", icon: "bi-flower1", color: "#22c55e" },
-  { name: "Atlas Ventures", icon: "bi-graph-up-arrow", color: "#818cf8" },
-  { name: "Maroc Digital", icon: "bi-grid-3x3-gap-fill", color: "#f472b6" },
-  { name: "CMPF", img: `${import.meta.env.BASE_URL}cmpf_logo.png`, color: "#1A569B" }
+  { name: "CMPF Ambulance", img: `${import.meta.env.BASE_URL}partner_cmpf_ar.webp` },
+  { name: "REDMED", img: `${import.meta.env.BASE_URL}partner_redmed.png` },
+  { name: "Universal PF", img: `${import.meta.env.BASE_URL}partner_universal_pf.png` },
+  { name: "Vogal Store", img: `${import.meta.env.BASE_URL}partner_vogal.png` }
 ];
 
 const servicesList = [
@@ -429,9 +425,9 @@ const Hero = () => {
           </p>
           <div className="logo-slider-container">
             <div className="logo-slider-track">
-              {[...partnersList, ...partnersList].map((partner, index) => (
+              {[...partnersList, ...partnersList, ...partnersList, ...partnersList].map((partner, index) => (
                 <div key={index} className="partner-logo-item d-flex align-items-center gap-2">
-                  <div className="partner-logo-icon" style={{ color: partner.color }}>
+                  <div className="partner-logo-icon">
                     {partner.img ? (
                       <img src={partner.img} alt={partner.name} className="partner-logo-img-tag" />
                     ) : (
