@@ -53,7 +53,8 @@ const partnersList = [
   { name: "CMPF Official", img: `${import.meta.env.BASE_URL}partner_cmpf_official.webp` },
   { name: "REDMED", img: `${import.meta.env.BASE_URL}partner_redmed.png` },
   { name: "Universal PF", img: `${import.meta.env.BASE_URL}partner_universal_pf.png` },
-  { name: "Vogal Store", img: `${import.meta.env.BASE_URL}partner_vogal.png` }
+  { name: "Vogal Store", img: `${import.meta.env.BASE_URL}partner_vogal.png` },
+  { name: "TRIPWAY", img: `${import.meta.env.BASE_URL}partner_tripway.png` }
 ];
 
 const servicesList = [
