@@ -54,7 +54,9 @@ const partnersList = [
   { name: "REDMED", img: `${import.meta.env.BASE_URL}partner_redmed.png` },
   { name: "Universal PF", img: `${import.meta.env.BASE_URL}partner_universal_pf.png` },
   { name: "Vogal Store", img: `${import.meta.env.BASE_URL}partner_vogal.png` },
-  { name: "TRIPWAY", img: `${import.meta.env.BASE_URL}partner_tripway.png` }
+  { name: "TRIPWAY", img: `${import.meta.env.BASE_URL}partner_tripway.png` },
+  { name: "RAIIDE Media", img: `${import.meta.env.BASE_URL}partner_raiide_media.png` },
+  { name: "M2 Maroc", img: `${import.meta.env.BASE_URL}partner_m2_maroc.png` }
 ];
 
 const servicesList = [
