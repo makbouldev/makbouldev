@@ -141,15 +141,15 @@ const ServiceDetail = () => {
       url: "https://pompesfunebresmaroc.com/"
     },
     {
-      id: "redmed-ecommerce",
-      title: "REDMED E-commerce",
+      id: "raiide-media",
+      title: "RAIIDE Media",
       category: "site-web",
-      desc: "Boutique en ligne moderne de prêt-à-porter avec outil de personnalisation d'impressions textile et Cash on Delivery.",
-      longDesc: "REDMED est une marque marocaine de vêtements streetwear et de personnalisation. Nous avons conçu et développé leur boutique e-commerce complète, incluant des fonctionnalités de commande sur-mesure pour l'impression et la broderie, un système de panier optimisé, et un tunnel d'achat adapté au Cash on Delivery.",
-      techs: ["React.js", "Tailwind CSS", "Vercel", "Cash on Delivery", "WhatsApp API"],
-      results: ["Tunnel de commande fluide et performant", "Module d'impression de textile sur-mesure", "Interface e-commerce moderne et responsive"],
-      image: `${import.meta.env.BASE_URL}redmed_showcase.png`,
-      url: "https://redmed.vercel.app/"
+      desc: "Plateforme web moderne de production audiovisuelle, studio média et création de contenu digital.",
+      longDesc: "RAIIDE Media est une agence créative spécialisée dans la production audiovisuelle, la réalisation de contenus digitaux et le branding. Nous avons conçu et développé leur plateforme web officielle, mettant en valeur leurs réalisations, leurs studios et leurs formules d'accompagnement média avec un design immersif.",
+      techs: ["React.js", "Tailwind CSS", "Vercel", "Branding", "WhatsApp API"],
+      results: ["Plateforme vitrine immersive et moderne", "Présentation haute définition du portfolio vidéo", "Tunnel de contact direct pour la réservation de studio"],
+      image: `${import.meta.env.BASE_URL}raiide_media_showcase.png`,
+      url: "https://raiide-media.vercel.app/"
     },
     {
       id: "cmpf-ambulance",
