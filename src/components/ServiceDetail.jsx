@@ -174,6 +174,17 @@ const ServiceDetail = () => {
       url: "https://koffee-kuento-seven.vercel.app/"
     },
     {
+      id: "farah-photography",
+      title: "Farah Photography",
+      category: "site-web",
+      desc: "Site vitrine élégant pour studio de photographie professionnelle, réservation de séances et galerie HD.",
+      longDesc: "Farah Photography est un studio spécialisé dans la photographie professionnelle d'événements, portraits et séances créatives. Nous avons conçu et développé leur site vitrine avec une galerie photo haute définition, réservation de séances en ligne et présentation des formules tarifaires.",
+      techs: ["React.js", "Tailwind CSS", "Vercel", "Galerie HD", "Réservation en ligne"],
+      results: ["Galerie photo haute définition avec chargement optimisé", "Système de réservation en ligne de séances photo", "Design élégant valorisant l'art et l'esthétique du studio"],
+      image: `${import.meta.env.BASE_URL}farah_photography_showcase.png`,
+      url: "https://photographystudio-snowy.vercel.app/"
+    },
+    {
       id: "tripway-travel",
       title: "TRIPWAY",
       category: "site-web",
