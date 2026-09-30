@@ -291,26 +291,25 @@ const Hero = () => {
             {/* Right Form Column */}
             <div className="col-lg-6 reveal active">
               <div className="hero-form-card p-4 rounded-4" style={{
-                background: 'rgba(10, 25, 47, 0.85)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)'
+                background: '#ffffff',
+                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                color: '#0f172a'
               }}>
                 <div className="text-start mb-3">
-                  <span className="badge text-uppercase bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25 mb-2 px-3 py-1">
+                  <span className="badge text-uppercase bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 mb-2 px-3 py-1 fw-bold">
                     <i className="bi bi-lightning-charge-fill me-1"></i> DEVIS GRATUIT EN 1 CLIC
                   </span>
-                  <h3 className="h4 text-white fw-bold mb-1">Obtenez Votre Estimation</h3>
-                  <p className="text-light text-opacity-75 small mb-0">Remplissez le formulaire ci-dessous pour lancer votre projet.</p>
+                  <h3 className="h4 text-dark fw-bold mb-1">Obtenez Votre Estimation</h3>
+                  <p className="text-muted small mb-0">Remplissez le formulaire ci-dessous pour lancer votre projet.</p>
                 </div>
 
                 {heroSubmitted ? (
-                  <div className="text-center py-4 text-light">
+                  <div className="text-center py-4 text-dark">
                     <div className="fs-1 text-success mb-2"><i className="bi bi-check-circle-fill"></i></div>
-                    <h4 className="fw-bold">Merci {heroForm.fullName} !</h4>
-                    <p className="small text-opacity-75 mb-3">Votre demande de devis a été transmise avec succès. Notre équipe vous recontactera sous 24h.</p>
-                    <button onClick={() => setHeroSubmitted(false)} className="btn btn-outline-light btn-sm">
+                    <h4 className="fw-bold text-dark">Merci {heroForm.fullName} !</h4>
+                    <p className="small text-muted mb-3">Votre demande de devis a été transmise avec succès. Notre équipe vous recontactera sous 24h.</p>
+                    <button onClick={() => setHeroSubmitted(false)} className="btn btn-outline-dark btn-sm">
                       Envoyer une autre demande
                     </button>
                   </div>
@@ -318,7 +317,7 @@ const Hero = () => {
                   <form onSubmit={handleHeroSubmit}>
                     <div className="row g-2">
                       <div className="col-12 col-md-6 text-start">
-                        <label className="form-label text-light small mb-1">Nom complet *</label>
+                        <label className="form-label text-dark fw-semibold small mb-1">Nom complet *</label>
                         <input 
                           type="text" 
                           name="fullName"
@@ -326,11 +325,11 @@ const Hero = () => {
                           placeholder="Ex: Mohamed Alami"
                           value={heroForm.fullName}
                           onChange={handleHeroChange}
-                          className="form-control form-control-dark"
+                          className="form-control form-control-light"
                         />
                       </div>
                       <div className="col-12 col-md-6 text-start">
-                        <label className="form-label text-light small mb-1">Adresse E-mail *</label>
+                        <label className="form-label text-dark fw-semibold small mb-1">Adresse E-mail *</label>
                         <input 
                           type="email" 
                           name="email"
@@ -338,11 +337,11 @@ const Hero = () => {
                           placeholder="Ex: m.alami@gmail.com"
                           value={heroForm.email}
                           onChange={handleHeroChange}
-                          className="form-control form-control-dark"
+                          className="form-control form-control-light"
                         />
                       </div>
                       <div className="col-12 col-md-6 text-start">
-                        <label className="form-label text-light small mb-1">Téléphone / WhatsApp *</label>
+                        <label className="form-label text-dark fw-semibold small mb-1">Numéro de Téléphone *</label>
                         <input 
                           type="tel" 
                           name="phone"
@@ -350,38 +349,38 @@ const Hero = () => {
                           placeholder="Ex: +212 6 00 00 00 00"
                           value={heroForm.phone}
                           onChange={handleHeroChange}
-                          className="form-control form-control-dark"
+                          className="form-control form-control-light"
                         />
                       </div>
                       <div className="col-12 col-md-6 text-start">
-                        <label className="form-label text-light small mb-1">Type de projet *</label>
+                        <label className="form-label text-dark fw-semibold small mb-1">Type de projet *</label>
                         <select 
                           name="projectType"
                           value={heroForm.projectType}
                           onChange={handleHeroChange}
-                          className="form-select form-control-dark"
+                          className="form-select form-control-light"
                         >
-                          <option value="Création de Site Web">Site Web (Vitrine / E-commerce)</option>
-                          <option value="Référencement Naturel (SEO)">Référencement SEO</option>
-                          <option value="Google Ads / Adwords">Google Ads</option>
-                          <option value="Publicité Meta (FB/IG)">Publicité Facebook & Instagram</option>
+                          <option value="Site Web">Site Web</option>
+                          <option value="Référencement SEO">Référencement SEO</option>
+                          <option value="Google Ads">Google Ads</option>
+                          <option value="Publicité Meta">Publicité Meta</option>
                           <option value="Application Mobile">Application Mobile</option>
-                          <option value="Autre Service Digital">Autre Service</option>
+                          <option value="Autre Service">Autre Service</option>
                         </select>
                       </div>
                       <div className="col-12 text-start">
-                        <label className="form-label text-light small mb-1">Message ou détails (optionnel)</label>
+                        <label className="form-label text-dark fw-semibold small mb-1">Message (optionnel)</label>
                         <textarea 
                           name="message"
                           rows="2"
-                          placeholder="Décrivez brièvement votre projet ou votre besoin..."
+                          placeholder="Décrivez brièvement votre besoin..."
                           value={heroForm.message}
                           onChange={handleHeroChange}
-                          className="form-control form-control-dark"
+                          className="form-control form-control-light"
                         ></textarea>
                       </div>
                       <div className="col-12 mt-3">
-                        <button type="submit" className="btn-hero-solid w-100 py-2 fw-bold d-flex align-items-center justify-content-center gap-2">
+                        <button type="submit" className="btn btn-primary w-100 py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2" style={{ background: '#0a2b5c', borderColor: '#0a2b5c', color: '#ffffff' }}>
                           <i className="bi bi-send-fill"></i> DEMANDER MON DEVIS GRATUIT
                         </button>
                       </div>

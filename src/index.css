@@ -1622,6 +1622,30 @@ main {
   color: #ffffff !important;
 }
 
+.form-control-light {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-size: 0.88rem !important;
+  border-radius: 8px !important;
+}
+
+.form-control-light:focus {
+  background: #ffffff !important;
+  border-color: var(--primary-indigo) !important;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.15) !important;
+  color: #0f172a !important;
+}
+
+.form-control-light::placeholder {
+  color: #94a3b8 !important;
+}
+
+.form-control-light option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
 /* Creative Portfolio Page Headers & Profiles */
 .portfolio-header-block {
   background: var(--bg-card);
