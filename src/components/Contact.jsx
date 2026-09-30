@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
+  const location = useLocation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     service: '',
-    budget: '',
     message: ''
   });
 
@@ -14,26 +16,40 @@ const Contact = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const servicesList = [
-    { value: 'web', label: 'Web Application Development' },
-    { value: 'mobile', label: 'Mobile Application (iOS & Android)' },
-    { value: 'desktop', label: 'Desktop Application' },
-    { value: 'seo', label: 'Search Engine Optimization (SEO)' },
-    { value: 'gmb', label: 'Google Business Profile Optimization' },
-    { value: 'ads', label: 'Paid Ads & Social Media Marketing' },
-    { value: 'hybrid', label: 'Custom Digital Solutions Suite' }
+    { value: 'Création de site web', label: 'Création de site web' },
+    { value: 'Référencement Naturel (SEO)', label: 'Référencement Naturel (SEO)' },
+    { value: 'Google Ads / Adwords', label: 'Google Ads / Adwords' },
+    { value: 'Publicité Meta', label: 'Publicité Meta (Facebook & Instagram)' },
+    { value: 'Application Mobile', label: 'Application Mobile' },
+    { value: 'Autre Service', label: 'Autre Service Digital' }
   ];
 
-  const budgetsList = [
-    { value: 'small', label: 'Under $1,000' },
-    { value: 'medium', label: '$1,000 - $3,000' },
-    { value: 'large', label: '$3,000 - $10,000' },
-    { value: 'enterprise', label: '$10,000+' }
-  ];
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const serviceQuery = location.state?.service || searchParams.get('service');
+    if (serviceQuery) {
+      const lower = serviceQuery.toLowerCase();
+      let found = 'Création de site web';
+      if (lower.includes('seo') || lower.includes('référencement')) {
+        found = 'Référencement Naturel (SEO)';
+      } else if (lower.includes('ads') || lower.includes('google') || lower.includes('adwords')) {
+        found = 'Google Ads / Adwords';
+      } else if (lower.includes('meta') || lower.includes('facebook') || lower.includes('instagram')) {
+        found = 'Publicité Meta';
+      } else if (lower.includes('mobile') || lower.includes('app')) {
+        found = 'Application Mobile';
+      } else if (lower.includes('site') || lower.includes('web')) {
+        found = 'Création de site web';
+      } else {
+        found = 'Autre Service';
+      }
+      setFormData(prev => ({ ...prev, service: found }));
+    }
+  }, [location]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Proactively clear error on typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -41,14 +57,14 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Full name is required.';
+    if (!formData.name.trim()) newErrors.name = 'Le nom complet est requis.';
     if (!formData.email.trim()) {
-      newErrors.email = 'Email address is required.';
+      newErrors.email = 'L\'adresse e-mail est requise.';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address.';
+      newErrors.email = 'Veuillez saisir une adresse e-mail valide.';
     }
-    if (!formData.service) newErrors.service = 'Please select a service.';
-    if (!formData.message.trim()) newErrors.message = 'Please describe your project.';
+    if (!formData.service) newErrors.service = 'Veuillez sélectionner un service.';
+    if (!formData.message.trim()) newErrors.message = 'Veuillez décrire votre projet.';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -67,11 +83,10 @@ const Contact = () => {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        _subject: `Nouveau Message de Contact: ${formData.name}`,
+        _subject: `Nouveau Message de Contact: ${formData.name} (${formData.service})`,
         Nom_Complet: formData.name,
         Email: formData.email,
         Service_Souhaite: formData.service,
-        Budget_Estime: formData.budget || 'Non spécifié',
         Message: formData.message,
         _template: 'table',
         _captcha: 'false'
@@ -84,7 +99,6 @@ const Contact = () => {
           name: '',
           email: '',
           service: '',
-          budget: '',
           message: ''
         });
         setTimeout(() => {
@@ -224,24 +238,8 @@ const Contact = () => {
                       <option key={idx} value={service.value}>{service.label}</option>
                     ))}
                   </select>
-                  <label htmlFor="service">Select Required Service</label>
+                  <label htmlFor="service">Type de Projet / Service Souhaité</label>
                   {errors.service && <div className="text-danger small mt-1">{errors.service}</div>}
-                </div>
-
-                {/* Budget Dropdown */}
-                <div className="form-floating-custom">
-                  <select 
-                    id="budget" 
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                  >
-                    <option value="" disabled hidden></option>
-                    {budgetsList.map((budget, idx) => (
-                      <option key={idx} value={budget.value}>{budget.label}</option>
-                    ))}
-                  </select>
-                  <label htmlFor="budget">Estimated Budget (Optional)</label>
                 </div>
 
                 {/* Message Textarea */}

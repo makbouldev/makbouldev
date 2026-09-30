@@ -647,7 +647,11 @@ const Hero = () => {
                     </ul>
                   </div>
                   
-                  <Link to="/contact" className={`btn-pricing-cta ${plan.badge ? 'btn-pricing-cta-primary' : 'btn-pricing-cta-secondary'}`}>
+                  <Link 
+                    to={`/contact?service=${encodeURIComponent(plan.title)}`} 
+                    state={{ service: plan.title }} 
+                    className={`btn-pricing-cta ${plan.badge ? 'btn-pricing-cta-primary' : 'btn-pricing-cta-secondary'}`}
+                  >
                     {plan.cta} <i className="bi bi-arrow-right ms-2"></i>
                   </Link>
                 </div>
