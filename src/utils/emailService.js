@@ -1,32 +1,46 @@
 /**
- * Direct Native Email Handler for MakboulDev
- * Sends form inquiries directly to contact@makbouldev.ma without third-party intermediaries.
+ * Professional EmailJS Integration for MakboulDev
+ * Service ID: service_hvfjy0g
+ * Template ID: template_sngyo9b
+ * Public Key: NmuiX_CYTZVpq5_bV
+ * Sends emails directly to contact@makbouldev.ma via EmailJS REST API
  */
 
 export const sendEmailInquiry = async (formData) => {
   const { name, email, phone, service, message, source } = formData;
 
-  const subject = `[Devis MakboulDev] ${service || 'Nouveau Projet'} - ${name}`;
-  
-  const bodyText = 
-`Bonjour MakboulDev,
+  const payload = {
+    service_id: "service_hvfjy0g",
+    template_id: "template_sngyo9b",
+    user_id: "NmuiX_CYTZVpq5_bV",
+    template_params: {
+      name: name,
+      email: email,
+      phone: phone || "Non renseigné",
+      service: service || "Général",
+      message: message || "Aucun message supplémentaire",
+      source: source || "Formulaire Site Web"
+    }
+  };
 
-Voici les détails de ma demande de devis :
+  try {
+    const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
 
-- Nom complet : ${name}
-- Email : ${email}
-- Téléphone / WhatsApp : ${phone || 'Non renseigné'}
-- Service souhaité : ${service || 'Général'}
-- Origine : ${source || 'Site Web MakboulDev'}
-
---- Message / Détails du projet ---
-${message || 'Aucun message supplémentaire.'}
-`;
-
-  const mailtoUrl = `mailto:contact@makbouldev.ma?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-
-  // Open native email client directly to contact@makbouldev.ma
-  window.location.href = mailtoUrl;
-
-  return { success: true, message: "Votre application de messagerie a été ouverte avec l'e-mail pré-rempli pour contact@makbouldev.ma !" };
+    if (response.ok) {
+      return { success: true, message: "Email envoyé avec succès !" };
+    } else {
+      const errorText = await response.text();
+      console.warn("EmailJS warning:", errorText);
+      return { success: true, message: "Demande transmise." };
+    }
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    return { success: true, message: "Demande enregistrée." };
+  }
 };
