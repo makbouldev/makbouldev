@@ -5,6 +5,14 @@ const ServiceDetail = () => {
   const { slug } = useParams();
   const [activeProject, setActiveProject] = useState(null);
 
+  const scrollToProjects = (e) => {
+    if (e) e.preventDefault();
+    const el = document.getElementById('projects-grid');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const servicesMap = {
     "site-web": {
       title: "Création de Sites Web",
@@ -312,9 +320,9 @@ const ServiceDetail = () => {
                 <i className="bi bi-whatsapp"></i> {(slug === 'seo' || slug === 'google-maps') ? 'Contactez MakboulDev pour le service' : 'WhatsApp'}
               </a>
               {(slug !== 'seo' && slug !== 'google-maps') && (
-                <a href="#projects-grid" className="btn-premium-outline-round d-inline-flex align-items-center gap-2 text-decoration-none">
+                <button onClick={scrollToProjects} className="btn-premium-outline-round d-inline-flex align-items-center gap-2 text-decoration-none border-0 bg-transparent">
                   <i className="bi bi-grid-fill"></i> Voir les projets
-                </a>
+                </button>
               )}
             </div>
           </div>
@@ -689,9 +697,9 @@ const ServiceDetail = () => {
                     >
                       <i className="bi bi-whatsapp"></i> Démarrer Mon Projet
                     </a>
-                    <a href="#projects-grid" className="btn-premium-outline-round d-inline-flex align-items-center gap-2 text-decoration-none">
+                    <button onClick={scrollToProjects} className="btn-premium-outline-round d-inline-flex align-items-center gap-2 text-decoration-none border-0 bg-transparent">
                       <i className="bi bi-grid-fill"></i> Découvrir nos réalisations
-                    </a>
+                    </button>
                   </div>
 
                 </div>
@@ -799,9 +807,9 @@ const ServiceDetail = () => {
                 >
                   <i className="bi bi-whatsapp"></i> Discuter sur WhatsApp
                 </a>
-                <a href="#projects-grid" className="btn-premium-outline-round d-inline-flex align-items-center gap-2 text-decoration-none">
+                <button onClick={scrollToProjects} className="btn-premium-outline-round d-inline-flex align-items-center gap-2 text-decoration-none border-0 bg-transparent">
                   <i className="bi bi-grid-fill"></i> Voir les projets
-                </a>
+                </button>
               </div>
             </div>
           </div>
