@@ -21,6 +21,12 @@ const AppContent = () => {
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
     
+    // On mobile devices (screen width <= 768px), immediately activate all reveal elements
+    if (window.innerWidth <= 768) {
+      revealElements.forEach(el => el.classList.add('active'));
+      return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -29,16 +35,26 @@ const AppContent = () => {
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
+      threshold: 0.01,
+      rootMargin: "100px 0px 50px 0px"
     });
 
     revealElements.forEach(el => {
-      el.classList.remove('active'); // Reset state before animating
       observer.observe(el);
     });
 
+    // Safety fallback: ensure visible elements are marked active
+    const timer = setTimeout(() => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 200) {
+          el.classList.add('active');
+        }
+      });
+    }, 300);
+
     return () => {
+      clearTimeout(timer);
       revealElements.forEach(el => observer.unobserve(el));
     };
   }, [location.pathname]);
