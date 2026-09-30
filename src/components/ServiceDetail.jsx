@@ -443,7 +443,7 @@ const ServiceDetail = () => {
                         <h4 className="h6 text-light mb-2 fw-bold">-20% sur la création de votre site vitrine !</h4>
                         <p className="text-muted small mb-3" style={{ fontSize: '0.7rem', lineHeight: '1.4' }}>Profitez d'une réduction exclusive cette semaine pour lancer votre présence en ligne au Maroc avec un design sur-mesure premium...</p>
                         <div className="d-flex gap-2">
-                          <a href="tel:+212783180806" className="btn btn-sm btn-primary py-1 px-3" style={{ fontSize: '0.7rem' }}>Appeler</a>
+                          <Link to="/contact" className="btn btn-sm btn-primary py-1 px-3" style={{ fontSize: '0.7rem' }}>Contacter</Link>
                           <span className="btn btn-sm btn-outline-secondary py-1 px-3" style={{ fontSize: '0.7rem', color: '#fff', borderColor: 'rgba(255,255,255,0.1)' }}>En savoir plus</span>
                         </div>
                       </div>
