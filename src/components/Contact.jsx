@@ -8,6 +8,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     service: '',
     message: ''
   });
@@ -64,8 +65,8 @@ const Contact = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Veuillez saisir une adresse e-mail valide.';
     }
+    if (!formData.phone.trim()) newErrors.phone = 'Le numéro de téléphone est requis.';
     if (!formData.service) newErrors.service = 'Veuillez sélectionner un service.';
-    if (!formData.message.trim()) newErrors.message = 'Veuillez décrire votre projet.';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -81,6 +82,7 @@ const Contact = () => {
       source: 'Page Contact',
       name: formData.name,
       email: formData.email,
+      phone: formData.phone,
       service: formData.service,
       message: formData.message
     });
@@ -90,6 +92,7 @@ const Contact = () => {
     setFormData({
       name: '',
       email: '',
+      phone: '',
       service: '',
       message: ''
     });
@@ -193,7 +196,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                   />
-                  <label htmlFor="name">Your Full Name</label>
+                  <label htmlFor="name">Nom complet *</label>
                   {errors.name && <div className="text-danger small mt-1">{errors.name}</div>}
                 </div>
 
@@ -207,8 +210,22 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                   />
-                  <label htmlFor="email">Your Email Address</label>
+                  <label htmlFor="email">Adresse E-mail *</label>
                   {errors.email && <div className="text-danger small mt-1">{errors.email}</div>}
+                </div>
+
+                {/* Phone / WhatsApp */}
+                <div className="form-floating-custom">
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone"
+                    placeholder=" "
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
+                  <label htmlFor="phone">Numéro de Téléphone / WhatsApp *</label>
+                  {errors.phone && <div className="text-danger small mt-1">{errors.phone}</div>}
                 </div>
 
                 {/* Service Dropdown */}
@@ -225,7 +242,7 @@ const Contact = () => {
                       <option key={idx} value={service.value}>{service.label}</option>
                     ))}
                   </select>
-                  <label htmlFor="service">Type de Projet / Service Souhaité</label>
+                  <label htmlFor="service">Type de Projet / Service Souhaité *</label>
                   {errors.service && <div className="text-danger small mt-1">{errors.service}</div>}
                 </div>
 
@@ -240,7 +257,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     style={{ height: 'auto', minHeight: '120px' }}
                   ></textarea>
-                  <label htmlFor="message">Describe Your Project / Objectives</label>
+                  <label htmlFor="message">Message ou détails du projet (optionnel)</label>
                   {errors.message && <div className="text-danger small mt-1">{errors.message}</div>}
                 </div>
 
