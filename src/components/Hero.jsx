@@ -301,11 +301,11 @@ const Hero = () => {
               </div>
               
               <h1 className="hero-agency-title display-4 fw-extrabold mb-3">
-                CRÉATION DE SITES WEB PROFESSIONNELS & CRÉATIFS
+                DE L'IDÉE À LA SOLUTION DIGITAL SUR-MESURE
               </h1>
               
               <p className="hero-agency-desc lead mb-4">
-                Nous concevons des sites vitrines et e-commerce ultra-rapides, et nous propulsons votre croissance avec des services digitaux complets : référencement SEO, Google Ads, Meta et applications mobiles.
+                De la conception initiale au lancement stratégique, nous transformons vos idées en solutions digitales puissantes et sur-mesure : sites web ultra-rapides, applications mobiles, référencement SEO et campagnes de croissance.
               </p>
 
               <div className="d-flex flex-wrap align-items-center gap-4 text-white small mb-4 fw-medium">
