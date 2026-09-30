@@ -204,6 +204,27 @@ const Hero = () => {
     "Campagnes Publicitaires"
   ];
 
+  const [heroForm, setHeroForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    projectType: 'Création de Site Web',
+    message: ''
+  });
+  const [heroSubmitted, setHeroSubmitted] = useState(false);
+
+  const handleHeroChange = (e) => {
+    const { name, value } = e.target;
+    setHeroForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleHeroSubmit = (e) => {
+    e.preventDefault();
+    setHeroSubmitted(true);
+    const text = `Bonjour MakboulDev,%0A%0A*Demande de Devis En Ligne (Hero)*:%0A- Nom: ${encodeURIComponent(heroForm.fullName)}%0A- Email: ${encodeURIComponent(heroForm.email)}%0A- Téléphone: ${encodeURIComponent(heroForm.phone)}%0A- Type de projet: ${encodeURIComponent(heroForm.projectType)}%0A- Message: ${encodeURIComponent(heroForm.message || 'Aucun')}`;
+    window.open(`https://wa.me/212783180806?text=${text}`, '_blank');
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setSpecialtyIndex((prevIndex) => (prevIndex + 1) % specialties.length);
@@ -245,26 +266,128 @@ const Hero = () => {
             <span className="social-sidebar-text">SUIVEZ-NOUS</span>
           </div>
 
-          <div className="row">
+          <div className="row align-items-center g-4">
             {/* Left Content Column */}
-            <div className="col-lg-7 text-start reveal active ps-lg-5">
+            <div className="col-lg-6 text-start reveal active ps-lg-5">
               <div className="hero-agency-subtitle d-flex align-items-center gap-2 mb-3">
                 <span className="subtitle-text">SOLUTIONS & STRATÉGIES DIGITALES</span>
                 <span className="subtitle-line"></span>
               </div>
               
-              <h1 className="hero-agency-title display-3 fw-extrabold mb-4">
-                CRÉATION DE SITES WEB PROFESSIONNELS & CRÉATIFS — DEVIS GRATUIT
+              <h1 className="hero-agency-title display-4 fw-extrabold mb-3">
+                CRÉATION DE SITES WEB PROFESSIONNELS & CRÉATIFS
               </h1>
               
-              <p className="hero-agency-desc lead mb-5">
+              <p className="hero-agency-desc lead mb-4">
                 Nous concevons des sites vitrines et e-commerce ultra-rapides, et nous propulsons votre croissance avec des services digitaux complets : référencement SEO, Google Ads, Meta et applications mobiles.
               </p>
 
-              <div className="hero-agency-buttons d-flex flex-wrap gap-3">
-                <Link to="/contact" className="btn-hero-solid d-flex align-items-center gap-2">
-                  <i className="bi bi-file-earmark-text"></i> DEMANDER UN DEVIS
-                </Link>
+              <div className="d-flex flex-wrap align-items-center gap-4 text-light opacity-75 small mb-2">
+                <div className="d-flex align-items-center gap-2"><i className="bi bi-check-circle-fill text-success fs-6"></i> Devis gratuit & sans engagement</div>
+                <div className="d-flex align-items-center gap-2"><i className="bi bi-check-circle-fill text-success fs-6"></i> Réponse sous 24h</div>
+              </div>
+            </div>
+
+            {/* Right Form Column */}
+            <div className="col-lg-6 reveal active">
+              <div className="hero-form-card p-4 rounded-4" style={{
+                background: 'rgba(10, 25, 47, 0.85)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)'
+              }}>
+                <div className="text-start mb-3">
+                  <span className="badge text-uppercase bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25 mb-2 px-3 py-1">
+                    <i className="bi bi-lightning-charge-fill me-1"></i> DEVIS GRATUIT EN 1 CLIC
+                  </span>
+                  <h3 className="h4 text-white fw-bold mb-1">Obtenez Votre Estimation</h3>
+                  <p className="text-light text-opacity-75 small mb-0">Remplissez le formulaire ci-dessous pour lancer votre projet.</p>
+                </div>
+
+                {heroSubmitted ? (
+                  <div className="text-center py-4 text-light">
+                    <div className="fs-1 text-success mb-2"><i className="bi bi-check-circle-fill"></i></div>
+                    <h4 className="fw-bold">Merci {heroForm.fullName} !</h4>
+                    <p className="small text-opacity-75 mb-3">Votre demande de devis a été transmise avec succès. Notre équipe vous recontactera sous 24h.</p>
+                    <button onClick={() => setHeroSubmitted(false)} className="btn btn-outline-light btn-sm">
+                      Envoyer une autre demande
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleHeroSubmit}>
+                    <div className="row g-2">
+                      <div className="col-12 col-md-6 text-start">
+                        <label className="form-label text-light small mb-1">Nom complet *</label>
+                        <input 
+                          type="text" 
+                          name="fullName"
+                          required 
+                          placeholder="Ex: Mohamed Alami"
+                          value={heroForm.fullName}
+                          onChange={handleHeroChange}
+                          className="form-control form-control-dark"
+                        />
+                      </div>
+                      <div className="col-12 col-md-6 text-start">
+                        <label className="form-label text-light small mb-1">Adresse E-mail *</label>
+                        <input 
+                          type="email" 
+                          name="email"
+                          required 
+                          placeholder="Ex: m.alami@gmail.com"
+                          value={heroForm.email}
+                          onChange={handleHeroChange}
+                          className="form-control form-control-dark"
+                        />
+                      </div>
+                      <div className="col-12 col-md-6 text-start">
+                        <label className="form-label text-light small mb-1">Téléphone / WhatsApp *</label>
+                        <input 
+                          type="tel" 
+                          name="phone"
+                          required 
+                          placeholder="Ex: +212 6 00 00 00 00"
+                          value={heroForm.phone}
+                          onChange={handleHeroChange}
+                          className="form-control form-control-dark"
+                        />
+                      </div>
+                      <div className="col-12 col-md-6 text-start">
+                        <label className="form-label text-light small mb-1">Type de projet *</label>
+                        <select 
+                          name="projectType"
+                          value={heroForm.projectType}
+                          onChange={handleHeroChange}
+                          className="form-select form-control-dark"
+                        >
+                          <option value="Création de Site Web">Site Web (Vitrine / E-commerce)</option>
+                          <option value="Référencement Naturel (SEO)">Référencement SEO</option>
+                          <option value="Google Ads / Adwords">Google Ads</option>
+                          <option value="Publicité Meta (FB/IG)">Publicité Facebook & Instagram</option>
+                          <option value="Application Mobile">Application Mobile</option>
+                          <option value="Autre Service Digital">Autre Service</option>
+                        </select>
+                      </div>
+                      <div className="col-12 text-start">
+                        <label className="form-label text-light small mb-1">Message ou détails (optionnel)</label>
+                        <textarea 
+                          name="message"
+                          rows="2"
+                          placeholder="Décrivez brièvement votre projet ou votre besoin..."
+                          value={heroForm.message}
+                          onChange={handleHeroChange}
+                          className="form-control form-control-dark"
+                        ></textarea>
+                      </div>
+                      <div className="col-12 mt-3">
+                        <button type="submit" className="btn-hero-solid w-100 py-2 fw-bold d-flex align-items-center justify-content-center gap-2">
+                          <i className="bi bi-send-fill"></i> DEMANDER MON DEVIS GRATUIT
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
           </div>

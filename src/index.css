@@ -1597,6 +1597,31 @@ main {
   }
 }
 
+/* Hero Form Input Styles */
+.form-control-dark {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  font-size: 0.88rem !important;
+  border-radius: 8px !important;
+}
+
+.form-control-dark:focus {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--primary-indigo) !important;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.form-control-dark::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.form-control-dark option {
+  background-color: #0c1c30 !important;
+  color: #ffffff !important;
+}
+
 /* Creative Portfolio Page Headers & Profiles */
 .portfolio-header-block {
   background: var(--bg-card);
