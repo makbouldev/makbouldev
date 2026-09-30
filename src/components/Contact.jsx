@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { sendEmailInquiry } from '../utils/emailService';
 
 const Contact = () => {
   const location = useLocation();
@@ -70,46 +71,32 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
-    fetch('https://formsubmit.co/ajax/contact@makbouldev.ma', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        _subject: `Nouveau Message de Contact: ${formData.name} (${formData.service})`,
-        Nom_Complet: formData.name,
-        Email: formData.email,
-        Service_Souhaite: formData.service,
-        Message: formData.message,
-        _template: 'table',
-        _captcha: 'false'
-      })
-    })
-      .then(() => {
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-        setFormData({
-          name: '',
-          email: '',
-          service: '',
-          message: ''
-        });
-        setTimeout(() => {
-          setSubmitSuccess(false);
-        }, 8000);
-      })
-      .catch((err) => {
-        console.error('Error submitting contact form:', err);
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-      });
+    await sendEmailInquiry({
+      source: 'Page Contact',
+      name: formData.name,
+      email: formData.email,
+      service: formData.service,
+      message: formData.message
+    });
+
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setFormData({
+      name: '',
+      email: '',
+      service: '',
+      message: ''
+    });
+
+    setTimeout(() => {
+      setSubmitSuccess(false);
+    }, 8000);
   };
 
   return (

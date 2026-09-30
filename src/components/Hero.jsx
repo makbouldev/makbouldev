@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { sendEmailInquiry } from '../utils/emailService';
 
 const CounterValue = ({ target, duration = 1500, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -219,36 +220,21 @@ const Hero = () => {
     setHeroForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleHeroSubmit = (e) => {
+  const handleHeroSubmit = async (e) => {
     e.preventDefault();
     setHeroSubmitting(true);
 
-    fetch('https://formsubmit.co/ajax/contact@makbouldev.ma', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        _subject: `Nouvelle Demande de Devis: ${heroForm.fullName} (${heroForm.projectType})`,
-        Nom_Complet: heroForm.fullName,
-        Email: heroForm.email,
-        Telephone: heroForm.phone,
-        Type_De_Projet: heroForm.projectType,
-        Message: heroForm.message || 'Aucun message',
-        _template: 'table',
-        _captcha: 'false'
-      })
-    })
-      .then(() => {
-        setHeroSubmitting(false);
-        setHeroSubmitted(true);
-      })
-      .catch((err) => {
-        console.error('Error submitting form:', err);
-        setHeroSubmitting(false);
-        setHeroSubmitted(true);
-      });
+    await sendEmailInquiry({
+      source: 'Hero Form Card',
+      name: heroForm.fullName,
+      email: heroForm.email,
+      phone: heroForm.phone,
+      service: heroForm.projectType,
+      message: heroForm.message
+    });
+
+    setHeroSubmitting(false);
+    setHeroSubmitted(true);
   };
 
   useEffect(() => {
