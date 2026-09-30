@@ -47,6 +47,15 @@ const Contact = () => {
       }
       setFormData(prev => ({ ...prev, service: found }));
     }
+
+    if (location.state?.scrollToForm || location.search.includes('scroll=form')) {
+      setTimeout(() => {
+        const el = document.getElementById('contact-form');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 250);
+    }
   }, [location]);
 
   const handleInputChange = (e) => {
@@ -175,7 +184,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column: Interactive Form */}
-          <div className="col-lg-6 reveal">
+          <div id="contact-form" className="col-lg-6 reveal">
             <div className="glass-card">
               <form onSubmit={handleSubmit} noValidate>
                 

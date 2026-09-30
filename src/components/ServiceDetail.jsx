@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link, Navigate, useLocation } from 'react-router-dom';
 
 const ServiceDetail = () => {
   const { slug } = useParams();
+  const location = useLocation();
   const [activeProject, setActiveProject] = useState(null);
 
   const scrollToProjects = (e) => {
     if (e) e.preventDefault();
     const el = document.getElementById('projects-grid');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  useEffect(() => {
+    if (location.state?.scrollToProjects) {
+      setTimeout(() => {
+        const el = document.getElementById('projects-grid');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 250);
+    }
+  }, [location]);
 
   const servicesMap = {
     "site-web": {

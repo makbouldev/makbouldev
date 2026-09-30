@@ -304,10 +304,10 @@ const Hero = () => {
               </div>
 
               <div className="d-flex flex-wrap align-items-center gap-3">
-                <Link to="/contact" className="btn-hero-solid d-flex align-items-center gap-2">
+                <Link to="/contact" state={{ scrollToForm: true }} className="btn-hero-solid d-flex align-items-center gap-2">
                   <i className="bi bi-envelope-fill"></i> Contactez-nous
                 </Link>
-                <Link to="/portfolio" className="btn-hero-outline d-flex align-items-center gap-2">
+                <Link to="/portfolio" state={{ scrollToProjects: true }} className="btn-hero-outline d-flex align-items-center gap-2">
                   <i className="bi bi-folder-fill"></i> Voir nos projets
                 </Link>
               </div>
