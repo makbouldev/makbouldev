@@ -308,7 +308,7 @@ const Hero = () => {
                 Nous concevons des sites vitrines et e-commerce ultra-rapides, et nous propulsons votre croissance avec des services digitaux complets : référencement SEO, Google Ads, Meta et applications mobiles.
               </p>
 
-              <div className="d-flex flex-wrap align-items-center gap-4 text-white small mb-2 fw-medium">
+              <div className="d-flex flex-wrap align-items-center gap-4 text-white small mb-4 fw-medium">
                 <div className="d-flex align-items-center gap-2">
                   <i className="bi bi-check-circle-fill fs-6" style={{ color: '#34d399' }}></i> Devis gratuit & sans engagement
                 </div>
@@ -316,10 +316,25 @@ const Hero = () => {
                   <i className="bi bi-check-circle-fill fs-6" style={{ color: '#34d399' }}></i> Réponse sous 24h
                 </div>
               </div>
+
+              <div className="d-flex flex-wrap align-items-center gap-3">
+                <button 
+                  onClick={() => {
+                    document.getElementById('hero-devis-form')?.scrollIntoView({ behavior: 'smooth' });
+                    document.querySelector('#hero-devis-form input')?.focus();
+                  }}
+                  className="btn-hero-solid d-flex align-items-center gap-2"
+                >
+                  <i className="bi bi-envelope-fill"></i> Contactez-nous
+                </button>
+                <Link to="/service-b2b" className="btn-hero-outline d-flex align-items-center gap-2">
+                  <i className="bi bi-folder-fill"></i> Voir nos projets
+                </Link>
+              </div>
             </div>
 
             {/* Right Form Column */}
-            <div className="col-lg-6 reveal active">
+            <div id="hero-devis-form" className="col-lg-6 reveal active">
               <div className="hero-form-card p-4 rounded-4" style={{
                 background: '#ffffff',
                 boxShadow: '0 20px 50px rgba(0, 0, 0, 0.3)',
