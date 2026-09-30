@@ -1,39 +1,32 @@
 /**
- * Professional Email Service for MakboulDev
- * Handles lead submissions cleanly via Web3Forms API to contact@makbouldev.ma
+ * Direct Native Email Handler for MakboulDev
+ * Sends form inquiries directly to contact@makbouldev.ma without third-party intermediaries.
  */
 
 export const sendEmailInquiry = async (formData) => {
   const { name, email, phone, service, message, source } = formData;
 
-  const payload = {
-    access_key: "a810f607-b3ab-41c5-bd7a-e46123498877",
-    subject: `[Devis MakboulDev] ${service || 'Nouveau Projet'} - ${name}`,
-    from_name: name,
-    replyto: email,
-    to_email: "contact@makbouldev.ma",
-    Nom_Complet: name,
-    Adresse_Email: email,
-    Numero_Telephone: phone || "Non renseigné",
-    Service_Demande: service || "Général",
-    Message: message || "Aucun message",
-    Origine: source || "Formulaire Site Web"
-  };
+  const subject = `[Devis MakboulDev] ${service || 'Nouveau Projet'} - ${name}`;
+  
+  const bodyText = 
+`Bonjour MakboulDev,
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+Voici les détails de ma demande de devis :
 
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error("Erreur lors de l'envoi de l'email :", error);
-    return { success: true, message: "Demande enregistrée avec succès." };
-  }
+- Nom complet : ${name}
+- Email : ${email}
+- Téléphone / WhatsApp : ${phone || 'Non renseigné'}
+- Service souhaité : ${service || 'Général'}
+- Origine : ${source || 'Site Web MakboulDev'}
+
+--- Message / Détails du projet ---
+${message || 'Aucun message supplémentaire.'}
+`;
+
+  const mailtoUrl = `mailto:contact@makbouldev.ma?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+  // Open native email client directly to contact@makbouldev.ma
+  window.location.href = mailtoUrl;
+
+  return { success: true, message: "Votre application de messagerie a été ouverte avec l'e-mail pré-rempli pour contact@makbouldev.ma !" };
 };
