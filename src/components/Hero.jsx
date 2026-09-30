@@ -318,15 +318,9 @@ const Hero = () => {
               </div>
 
               <div className="d-flex flex-wrap align-items-center gap-3">
-                <button 
-                  onClick={() => {
-                    document.getElementById('hero-devis-form')?.scrollIntoView({ behavior: 'smooth' });
-                    document.querySelector('#hero-devis-form input')?.focus();
-                  }}
-                  className="btn-hero-solid d-flex align-items-center gap-2"
-                >
+                <Link to="/contact" className="btn-hero-solid d-flex align-items-center gap-2">
                   <i className="bi bi-envelope-fill"></i> Contactez-nous
-                </button>
+                </Link>
                 <Link to="/service-b2b" className="btn-hero-outline d-flex align-items-center gap-2">
                   <i className="bi bi-folder-fill"></i> Voir nos projets
                 </Link>
