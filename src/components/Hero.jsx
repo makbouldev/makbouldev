@@ -282,9 +282,13 @@ const Hero = () => {
                 Nous concevons des sites vitrines et e-commerce ultra-rapides, et nous propulsons votre croissance avec des services digitaux complets : référencement SEO, Google Ads, Meta et applications mobiles.
               </p>
 
-              <div className="d-flex flex-wrap align-items-center gap-4 text-light opacity-75 small mb-2">
-                <div className="d-flex align-items-center gap-2"><i className="bi bi-check-circle-fill text-success fs-6"></i> Devis gratuit & sans engagement</div>
-                <div className="d-flex align-items-center gap-2"><i className="bi bi-check-circle-fill text-success fs-6"></i> Réponse sous 24h</div>
+              <div className="d-flex flex-wrap align-items-center gap-4 text-white small mb-2 fw-medium">
+                <div className="d-flex align-items-center gap-2">
+                  <i className="bi bi-check-circle-fill fs-6" style={{ color: '#34d399' }}></i> Devis gratuit & sans engagement
+                </div>
+                <div className="d-flex align-items-center gap-2">
+                  <i className="bi bi-check-circle-fill fs-6" style={{ color: '#34d399' }}></i> Réponse sous 24h
+                </div>
               </div>
             </div>
 
