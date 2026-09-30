@@ -55,6 +55,13 @@ ${message || 'Aucun message supplémentaire.'}
       body: JSON.stringify(payload)
     });
 
+    // Trigger Google Ads lead conversion tracking event
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-18363723978/A8GVCMXEtOQcEMrhwLRE'
+      });
+    }
+
     if (response.ok) {
       return { success: true, message: "Email envoyé avec succès !" };
     } else {

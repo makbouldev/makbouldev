@@ -10,6 +10,23 @@
 
       gtag('config', 'AW-18363723978');
     </script>
+    <!-- Event snippet for Website lead conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18363723978/A8GVCMXEtOQcEMrhwLRE',
+              'event_callback': callback
+          });
+        }
+        return false;
+      }
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
