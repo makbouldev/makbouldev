@@ -112,10 +112,11 @@ const Navbar = () => {
               <NavLink className="nav-menu-link" to="/services">SERVICES</NavLink>
             </li>
             <li className="nav-link-item">
+              <NavLink className="nav-menu-link" to="/portfolio">PORTFOLIO</NavLink>
+            </li>
+            <li className="nav-link-item">
               <NavLink className="nav-menu-link" to="/b2b">SERVICES B2B</NavLink>
             </li>
-
-
             <li className="nav-link-item">
               <NavLink className="nav-menu-link" to="/contact">CONTACT</NavLink>
             </li>
@@ -164,9 +165,8 @@ const Navbar = () => {
             <ul className="mobile-nav-links m-0 p-0 mb-4">
               <li><NavLink className="mobile-link" to="/" onClick={closeMenu} end>ACCUEIL</NavLink></li>
               <li><NavLink className="mobile-link" to="/services" onClick={closeMenu}>SERVICES</NavLink></li>
+              <li><NavLink className="mobile-link" to="/portfolio" onClick={closeMenu}>PORTFOLIO</NavLink></li>
               <li><NavLink className="mobile-link" to="/b2b" onClick={closeMenu}>SERVICES B2B</NavLink></li>
-
-
               <li><NavLink className="mobile-link" to="/contact" onClick={closeMenu}>CONTACT</NavLink></li>
             </ul>
 

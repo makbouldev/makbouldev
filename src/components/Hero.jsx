@@ -321,7 +321,7 @@ const Hero = () => {
                 <Link to="/contact" className="btn-hero-solid d-flex align-items-center gap-2">
                   <i className="bi bi-envelope-fill"></i> Contactez-nous
                 </Link>
-                <Link to="/service-b2b" className="btn-hero-outline d-flex align-items-center gap-2">
+                <Link to="/portfolio" className="btn-hero-outline d-flex align-items-center gap-2">
                   <i className="bi bi-folder-fill"></i> Voir nos projets
                 </Link>
               </div>

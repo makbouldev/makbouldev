@@ -252,9 +252,8 @@ const ServiceDetail = () => {
     }
   ];
 
-  const service = servicesMap[slug];
-
-
+  const currentSlug = slug || 'site-web';
+  const service = servicesMap[currentSlug];
 
   if (!service) {
     return <Navigate to="/services" replace />;

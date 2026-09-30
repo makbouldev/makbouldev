@@ -52,13 +52,11 @@ const AppContent = () => {
       <main>
         <Routes>
           <Route path="/" element={<Hero />} />
-
           <Route path="/services" element={<Services />} />
           <Route path="/service/:slug" element={<ServiceDetail />} />
+          <Route path="/portfolio" element={<ServiceDetail />} />
+          <Route path="/projets" element={<ServiceDetail />} />
           <Route path="/b2b" element={<B2B />} />
-
-
-
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
