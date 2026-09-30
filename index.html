@@ -10,6 +10,23 @@
 
       gtag('config', 'AW-18363723978');
     </script>
+    <!-- Event snippet for Website lead conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18363723978/A8GVCMXEtOQcEMrhwLRE',
+              'event_callback': callback
+          });
+        }
+        return false;
+      }
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/makbouldev/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>MakboulDev | Digital Solutions & Growth Specialist</title>
-    <script type="module" crossorigin src="/makbouldev/assets/index-ZM_2RAaV.js"></script>
+    <script type="module" crossorigin src="/makbouldev/assets/index-DntgKvpb.js"></script>
     <link rel="stylesheet" crossorigin href="/makbouldev/assets/index-Bob2qE38.css">
   </head>
   <body>
