@@ -1,16 +1,16 @@
 /**
  * Professional EmailJS Integration for MakboulDev
- * Service ID: service_hvfjy0g
+ * Service ID: service_vfk92n4 (Connected to noureddinemakboul03@gmail.com)
  * Template ID: template_sngyo9b
  * Public Key: NmuiX_CYTZVpq5_bV
- * Sends emails directly to contact@makbouldev.ma via EmailJS REST API
+ * Direct background email delivery to inbox without redirects.
  */
 
 export const sendEmailInquiry = async (formData) => {
   const { name, email, phone, service, message, source } = formData;
 
   const payload = {
-    service_id: "service_hvfjy0g",
+    service_id: "service_vfk92n4",
     template_id: "template_sngyo9b",
     user_id: "NmuiX_CYTZVpq5_bV",
     template_params: {
