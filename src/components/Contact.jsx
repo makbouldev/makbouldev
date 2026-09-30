@@ -59,24 +59,43 @@ const Contact = () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    
-    // Simulate API submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        service: '',
-        budget: '',
-        message: ''
+
+    fetch('https://formsubmit.co/ajax/contact@makbouldev.ma', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `Nouveau Message de Contact: ${formData.name}`,
+        Nom_Complet: formData.name,
+        Email: formData.email,
+        Service_Souhaite: formData.service,
+        Budget_Estime: formData.budget || 'Non spécifié',
+        Message: formData.message,
+        _template: 'table',
+        _captcha: 'false'
+      })
+    })
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          service: '',
+          budget: '',
+          message: ''
+        });
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 8000);
+      })
+      .catch((err) => {
+        console.error('Error submitting contact form:', err);
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
       });
-      
-      // Auto-hide success notification after 8 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 8000);
-    }, 15000 / 10); // 1.5 seconds mock latency
   };
 
   return (

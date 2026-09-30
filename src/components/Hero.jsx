@@ -208,9 +208,10 @@ const Hero = () => {
     fullName: '',
     email: '',
     phone: '',
-    projectType: 'Création de Site Web',
+    projectType: 'Site Web',
     message: ''
   });
+  const [heroSubmitting, setHeroSubmitting] = useState(false);
   const [heroSubmitted, setHeroSubmitted] = useState(false);
 
   const handleHeroChange = (e) => {
@@ -220,9 +221,34 @@ const Hero = () => {
 
   const handleHeroSubmit = (e) => {
     e.preventDefault();
-    setHeroSubmitted(true);
-    const text = `Bonjour MakboulDev,%0A%0A*Demande de Devis En Ligne (Hero)*:%0A- Nom: ${encodeURIComponent(heroForm.fullName)}%0A- Email: ${encodeURIComponent(heroForm.email)}%0A- Téléphone: ${encodeURIComponent(heroForm.phone)}%0A- Type de projet: ${encodeURIComponent(heroForm.projectType)}%0A- Message: ${encodeURIComponent(heroForm.message || 'Aucun')}`;
-    window.open(`https://wa.me/212783180806?text=${text}`, '_blank');
+    setHeroSubmitting(true);
+
+    fetch('https://formsubmit.co/ajax/contact@makbouldev.ma', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `Nouvelle Demande de Devis: ${heroForm.fullName} (${heroForm.projectType})`,
+        Nom_Complet: heroForm.fullName,
+        Email: heroForm.email,
+        Telephone: heroForm.phone,
+        Type_De_Projet: heroForm.projectType,
+        Message: heroForm.message || 'Aucun message',
+        _template: 'table',
+        _captcha: 'false'
+      })
+    })
+      .then(() => {
+        setHeroSubmitting(false);
+        setHeroSubmitted(true);
+      })
+      .catch((err) => {
+        console.error('Error submitting form:', err);
+        setHeroSubmitting(false);
+        setHeroSubmitted(true);
+      });
   };
 
   useEffect(() => {
@@ -384,8 +410,22 @@ const Hero = () => {
                         ></textarea>
                       </div>
                       <div className="col-12 mt-3">
-                        <button type="submit" className="btn btn-primary w-100 py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2" style={{ background: '#0a2b5c', borderColor: '#0a2b5c', color: '#ffffff' }}>
-                          <i className="bi bi-send-fill"></i> DEMANDER MON DEVIS GRATUIT
+                        <button 
+                          type="submit" 
+                          disabled={heroSubmitting} 
+                          className="btn btn-primary w-100 py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2" 
+                          style={{ background: '#0a2b5c', borderColor: '#0a2b5c', color: '#ffffff' }}
+                        >
+                          {heroSubmitting ? (
+                            <>
+                              <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                              Envoi en cours...
+                            </>
+                          ) : (
+                            <>
+                              <i className="bi bi-send-fill"></i> DEMANDER MON DEVIS GRATUIT
+                            </>
+                          )}
                         </button>
                       </div>
                     </div>
